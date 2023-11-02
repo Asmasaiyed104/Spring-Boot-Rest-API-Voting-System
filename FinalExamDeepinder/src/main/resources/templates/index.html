@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+<title>AsmaSaiyed Capstone!</title>
+
+
+
+<script src="../static/js/script.js" th:src="@{js/script.js}"></script>
+<script src="../static/js/script.js" th:src="@{js/snowflakes.js}"></script>
+<link th:href="@{/css/mycss.css}" rel="stylesheet">
+</head>
+<body>
+ <canvas id="snow"></canvas>
+
+</div>
+	<h1>Vote here your favourite Finalists!</h1>
+
+	<h3 th:each="cal : ${capstoneList}">
+		<a href="#" th:onclick="'getCapstone('+ ${cal.id} + ')'"
+			th:text="${cal.name}">Frank</a>
+		<div th:id="'capstone' + ${cal.id}"></div>
+
+	</h3>
+
+	<h1> The Capstone festival</h1>
+
+	<table th:if="${capstoneList !=null AND capstoneList !=''}">
+		<tr>
+            
+			<th>name</th>
+			<th>vote</th>
+			<th>information</th>
+			
+			
+
+		</tr>
+		<tr th:each="c : ${capstoneList}">
+			<!--<td th:text="${a.id}"> </td>  -->
+			<td th:text="${c.name}"></td>
+			<td th:text="${c.vote}"></td>
+			<td th:text="${c.information}">information</td>	
+		    <td> <a th:href="@{/deleteCapstoneById/} + ${c.id}"> Delete</a></td>
+		</tr>
+	</table>
+	<hr>
+
+	<form method="post" action="" th:action="@{/insertCapstone}"
+		th:object="${capstone}">
+		<input type="hidden" name="id" th:field="*{id}" /> 
+		Name:<input type="text" name="name" th:field="*{name}" /><br> 
+		Vote:<input type="text" name="vote" th:field="*{vote}" /><br>
+		Information:<input type="text" name="information" th:field="*{information}" /><br>
+		
+		
+		<input type="submit" value="Go!" />
+	</form>
+
+</body>
+</html>

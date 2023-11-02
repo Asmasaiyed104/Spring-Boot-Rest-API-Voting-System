@@ -1,0 +1,10 @@
+INSERT INTO capstone(name, vote, information) VALUES
+('David','6','good developer on youtube');
+INSERT INTO capstone(name, vote, information) VALUES
+('Ronaldo','6','good developer on social media');
+INSERT INTO capstone(name, vote, information) VALUES
+('WIlliam','6','good developer on youtube');
+INSERT INTO capstone(name, vote, information) VALUES
+('John','6','good developer on socialmedia');
+
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Capstone</title>
+</head>
+<body>
+    <h1>Edit Capstone</h1>
+    
+    <form method="post" th:action="@{/capstones/updateCapstone}" th:object="${capstone}">
+        <input type="hidden" name="id" th:field="*{id}" />
+        Name: <input type="text" name="name" th:field="*{name}" /><br>
+        Vote: <input type="text" name="vote" th:field="*{vote}" /><br>
+        Information: <input type="text" name="information" th:field="*{information}" /><br>
+        <input type="submit" value="Update" />
+    </form>
+</body>
+</html>

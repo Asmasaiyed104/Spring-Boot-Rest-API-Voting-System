@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* Overall body styling for background and font */
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Soft gray background */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; /* Darker text for better readability */
+    min-height: 80vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling with contrast and shadow for depth */
+h1 {
+    text-decoration: underline;
+    text-decoration-color: #28527a; /* Deep blue for emphasis */
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Merriweather', serif;
+    background-color: #e7e7e7; /* Light gray background */
+    color: #28527a; /* Text color matches underline */
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin: 0; /* Remove default margins */
+}
+
+/* Table styling with shadow and contrast */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* White background for contrast */
+    color: #333333; /* Dark text for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow for more depth */
+    margin-bottom: 10px;
+}
+
+table th,
+table td {
+    padding: 10px; /* Increased padding for a better table layout */
+    border: 1px solid #dddddd; /* Light border for subtle separation */
+    background-color: #f9f9f9; /* Slightly off-white background for headers/cells */
+}
+
+/* Form styling with improved shadow and contrast */
+form {
+    box-sizing: border-box;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fefefe; /* Bright background for the form area */
+    border: 2px solid #e7e7e7; /* Light border for soft edge */
+    border-radius: 10px; /* Rounded corners for a modern feel */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Larger shadow for more prominent depth */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Increased gap for better visual separation */
+}
+
+/* Enhancing the #snow element if needed */
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+
+@media only screen and (max-width: 1200px) {
+    /* Adjustments for smaller desktops */
+    form {
+        width: 80%; /* More width for form in smaller spaces */
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    /* Adjustments for tablets */
+    body {
+        font-size: 14px; /* Smaller font size for body */
+    }
+
+    form {
+        width: 90%; /* Increase form width to take more space */
+        grid-template-columns: 1fr; /* Stack inputs vertically */
+        gap: 15px;
+    }
+
+    table th,
+    table td {
+        padding: 8px; /* Less padding in table cells */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjustments for smaller tablets and large phones */
+    h1 {
+        font-size: 1.6em; /* Adjust h1 size for large phones */
+    }
+
+    form {
+        width: 95%; /* Form takes almost full width */
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    /* Adjustments for small phones */
+    body {
+        font-size: 13px; /* Even smaller font size for readability */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Small screen header size */
+        padding: 15px 0; /* Less padding on the top and bottom */
+    }
+
+    form {
+        width: 100%; /* Form should fill the screen entirely */
+        padding: 15px; /* Less padding in the form */
+    }
+
+    table {
+        box-shadow: none; /* Remove shadow to fit better on small screens */
+    }
+}
+
+/* Adjust content area to fill the space */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    padding: 20px;
+}
+
+/* Ensure footer sticks to the bottom */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #28527a;
+    color: white;
+}
